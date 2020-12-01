@@ -6,8 +6,9 @@ with open("puzzle_1.txt", "r") as f:
 
 for i in num_list:
     for j in num_list:
-        if i != j and i+j == target_sum:
-            print("%i * %i = %i" % (i, j, i*j))
-            exit(0)
+        for k in num_list:
+            if i != j and i != k and j != k and i+j+k == target_sum:
+                print("%i * %i * %i = %i" % (i, j, k, i*j*k))
+                exit(0)
 
 print("Failed")
